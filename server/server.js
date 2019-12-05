@@ -57,19 +57,29 @@ app.get('/user/:id', (req, res) => {
 	console.log(beginDate);
 	console.log(endDate);   
 	console.log(new Date(beginDate).getTime()); 
-	console.log(new Date(endDate).getTime());
+	console.log(new Date(endDate).getTime());	
+	console.log(users.filter((user) => user.id === userId).length > 0);
 
 	begin = new Date(beginDate).getTime();
 	end = new Date(endDate).getTime();
 
-	try {
-		res.json({
-			"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));})
-			//"data_filtered_users": users_statistic.filter(d => {var time = new Date(d.date).getTime(); return (begin < time && time < end);})                                                
-		});
-	} catch(err){
-		console.log(err);
-	}
+
+	if (users.filter( user => user.id === userId).length > 0){
+		try {
+			res.json({
+				"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));})
+				//"data_filtered_users": users_statistic.filter(d => {var time = new Date(d.date).getTime(); return (begin < time && time < end);})                                                
+		        });
+		} catch(err){
+			console.log(err);
+		}		
+	} else {
+		response = {
+			"error": true,
+			"message": "no user with such id"
+		};
+		return res.json(response); 			
+	} 	
 });
 
 
