@@ -10,20 +10,45 @@ class App extends React.Component {
       users: []
     };
     this.getAllUsers = this.getAllUsers.bind(this);
+    this.getUserStatistics = this.getUserStatistics.bind(this);
   }
 
   componentDidMount(){
     this.getAllUsers();
+    this.getUserStatistics();
   }
 
   getAllUsers = () => {
-    axios.post('http://localhost:4000/users',  {
+    axios.post('http://localhost:4000/users', {}, {
       headers: {
         'Content-Type': 'application/json',
       },  
-      body: {
-        "pageNumber": 4,
-        "numberOfUsers": 50
+      data: {
+        "pageNumber": 5,
+        "numberOfUsers": 6
+      }
+    })
+    .then((res) => {      
+      console.log(res);
+      this.setState({
+       // users: res.data.users
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
+  getUserStatistics = () => {
+    let userId = 999;
+
+    axios.post('http://localhost:4000/user/' + userId, {}, {
+      headers: {
+        'Content-Type': 'application/json',
+      },  
+      data: {
+        "beginDate": "2019-01-01",
+        "endDate": "2019-10-11"
       }
     })
     .then((res) => {      
@@ -48,6 +73,7 @@ render(){
       <h2 className="Why">Why <b>small business owners love</b> AppCo?</h2>
       <p className="LearnMore">Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work!</p>  
       </header>
+      <div className="Rectangle34"></div>
     </div>
   );
 }

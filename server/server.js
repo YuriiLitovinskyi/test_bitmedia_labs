@@ -49,7 +49,7 @@ app.post('/users', (req, res) => {
 });
 
 //GET data from users_statistic.json
-app.get('/user/:id', (req, res) => {
+app.post('/user/:id', (req, res) => {
 	let userId = parseInt(req.params.id);
 	//let userId = parseInt(req.body.userId);
 	//let userId = 38;
