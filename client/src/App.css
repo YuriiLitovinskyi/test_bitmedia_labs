@@ -1,0 +1,168 @@
+body {
+  /*font-family: 'Montserrat';*/
+}
+
+.App {
+  position: relative;
+  width: 1440px;
+  height: 2890px;
+  background: #FFFFFF;
+}
+
+.App-header {
+  position: absolute;
+  width: 1440px;
+  height: 655px;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(92.09deg, #255D8B 2.29%, #3A80BA 96.79%);
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('/fonts/montserrat-v14-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/montserrat-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+       url('/fonts/montserrat-v14-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/montserrat-v14-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-900 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Montserrat Black'), local('Montserrat-Black'),
+       url('/fonts/montserrat-v14-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/montserrat-v14-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.AppCo {
+  position: absolute;
+  width: 136px;
+  height: 49px;
+  left: 130px;
+  top: 24px;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 49px;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+
+.Brainstorming {
+  /* Brainstorming for desired perfect Usability */
+  position: absolute;
+  width: 586px;
+  height: 118px;
+  left: 130px;
+  top: 121px;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 59px;
+
+  color: #FFFFFF;
+}
+
+.About {
+  /* Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work! */
+  position: absolute;
+  width: 580px;
+  height: 56px;
+  left: 130px;
+  top: 263px;
+ 
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 142%;
+  /* or 28px */
+
+
+  color: #FFFFFF;
+}
+
+.statsButton {
+  /* Rectangle 56 */
+
+position: absolute;
+width: 154px;
+height: 56px;
+left: 130px;
+top: 351px;
+
+background: #FFFFFF;
+border-radius: 8px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 142%;
+/* identical to box height, or 23px */
+
+text-align: center;
+color: #3A80BA;
+}
+
+.Why {
+  /* Why small business owners love AppCo? */
+  position: absolute;
+  width: 580px;
+  height: 78px;
+  left: 430px;
+  top: 671px;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+
+  color: #1A1A1A;
+}
+
+.LearnMore {
+  /* Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work! */
+  position: absolute;
+  width: 780px;
+  height: 56px;
+  left: 330px;
+  top: 773px;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 142%;
+  /* or 28px */
+  text-align: center;
+
+  color: #7E7E7E;
+}
+
+.Rec34 {
+  /* Rectangle 34 */
+
+  position: absolute;
+  width: 380px;
+  height: 323px;
+  left: 130px;
+  top: 869px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 32px;
+
+}

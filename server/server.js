@@ -1,5 +1,7 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors());
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
@@ -14,7 +16,7 @@ const users_statistic = JSON.parse(fs.readFileSync('data/users_statistic.json', 
 //console.log(users_statistic);
 
 //GET data from users.json
-app.get('/users', (req, res) => {
+app.post('/users', (req, res) => {
 	let pageNumber = parseInt(req.body.pageNumber || 1);
 	let numberOfUsers = parseInt(req.body.numberOfUsers);	
 	const pageCount = Math.ceil(users.length / numberOfUsers);
