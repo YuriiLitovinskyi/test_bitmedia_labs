@@ -1,0 +1,191 @@
+$Color: #FFFFFF; 
+
+.App {
+    position: relative;
+    margin: auto;
+    width: 1440px;
+    height: 2890px;
+    background: $Color;    
+  }
+
+  .App-header {
+    position: absolute;
+    width: 1440px;
+    height: 655px;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(92.09deg, #255D8B 2.29%, #3A80BA 96.79%);
+    .AppCo {
+        position: absolute;
+        width: 136px;
+        height: 49px;
+        left: 130px;
+        top: 24px;
+        
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 49px;
+        /* identical to box height */
+        color: $Color;
+      }
+      
+      .Brainstorming {
+        /* Brainstorming for desired perfect Usability */
+        position: absolute;
+        width: 586px;
+        height: 118px;
+        left: 130px;
+        top: 121px;
+        
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 59px;
+      
+        color: $Color;
+      }
+      
+      .About {
+        /* Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work! */
+        position: absolute;
+        width: 580px;
+        height: 56px;
+        left: 130px;
+        top: 263px;
+       
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 142%;
+        /* or 28px */
+      
+      
+        color: $Color;
+      }
+      
+      .statsButton {
+        /* Rectangle 56 */
+      
+      position: absolute;
+      width: 154px;
+      height: 56px;
+      left: 130px;
+      top: 351px;
+      
+      background: $Color;
+      border-radius: 8px;
+      
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 142%;
+      /* identical to box height, or 23px */
+      
+      text-align: center;
+      color: #3A80BA;
+      }
+      
+      .Why {
+        /* Why small business owners love AppCo? */
+        position: absolute;
+        width: 580px;
+        height: 78px;
+        left: 430px;
+        top: 671px;
+        
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 39px;
+        text-align: center;
+      
+        color: #1A1A1A;
+      }
+      
+      .LearnMore {
+        /* Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work! */
+        position: absolute;
+        width: 780px;
+        height: 56px;
+        left: 330px;
+        top: 773px;
+        
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 142%;
+        /* or 28px */
+        text-align: center;
+      
+        color: #7E7E7E;
+      }
+  }
+
+.Rectangle34 {
+  position: absolute;
+  padding-top: 80px;
+  width: 380px;
+  height: 323px;
+  left: 130px;
+  top: 869px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 32px;
+}
+
+.CleanD {
+  /* Clean Design */
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+  width: 164px;
+  height: 29px;
+  left: 248px;
+  top: 1053px;
+  
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #1A1A1A;
+}
+
+.Sales {
+  /* Increase sales by showing true dynamics of your website. */
+
+
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+width: 316px;
+height: 46px;
+left: 162px;
+top: 1098px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 142%;
+/* or 23px */
+
+text-align: center;
+
+color: #7E7E7E;
+
+}
+
+.Group_13 {
+  /* Vector */
+
+display: flex;
+margin: auto;
+
+
+
+}
+
+  

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
+import './styles/App.css';
+import Group_13 from './styles/Group_13.png';
 
 class App extends React.Component {
   constructor(props){
@@ -73,7 +74,11 @@ render(){
       <h2 className="Why">Why <b>small business owners love</b> AppCo?</h2>
       <p className="LearnMore">Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work!</p>  
       </header>
-      <div className="Rectangle34"></div>
+      <div className="Rectangle34">
+        <img className="Group_13" src={Group_13}></img>
+        <h3 className="CleanD">Clean Design</h3>
+        <p className="Sales">Increase sales by showing true dynamics of your website.</p>
+      </div>
     </div>
   );
 }
