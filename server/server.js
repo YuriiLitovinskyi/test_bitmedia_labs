@@ -28,6 +28,16 @@ app.post('/users', (req, res) => {
 	console.log(req.body);
 	console.log(pageCount);
 	console.log(users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers) );
+	let usersArray = users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers);
+	
+	let total_clicks_views_Array = users_statistic.filter(user1 => usersArray.some(user2 => user1.user_id === user2.id));
+	
+	let total_clicks = total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.clicks); return c}, {});
+	console.log("----");
+	console.log(total_clicks_views_Array);
+	console.log("----");
+	console.log(total_clicks);
+	console.log("----end----");
 	console.log(users.length);	
 	console.log(Object.keys(users).length);
 	if (pageNumber < 0 || pageNumber === 0){
@@ -41,7 +51,9 @@ app.post('/users', (req, res) => {
 		res.json({
 			"page": pageNumber,
 			"pageCount": pageCount,
-			"users": users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers) 
+			"users": users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers),
+			"total_clicks": total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.clicks); return c}, {}),
+			"total_page_views": total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.page_views); return c}, {})
 		});
 	} catch(err){
 		console.log(err);
@@ -69,8 +81,7 @@ app.post('/user/:id', (req, res) => {
 	if (users.filter( user => user.id === userId).length > 0){
 		try {
 			res.json({
-				"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));})
-				//"data_filtered_users": users_statistic.filter(d => {var time = new Date(d.date).getTime(); return (begin < time && time < end);})                                                
+				"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));})				                                        
 		        });
 		} catch(err){
 			console.log(err);

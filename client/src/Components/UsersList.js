@@ -10,16 +10,18 @@ class UsersList extends React.Component {
     this.state={
       users: [],
       pageNumber: 1,
-      numberOfUsers: 10
+      numberOfUsers: 10,
+      total_clicks: [],
+      total_page_views: []
 
     };
     this.getAllUsers = this.getAllUsers.bind(this);
-    this.getUserStatistics = this.getUserStatistics.bind(this);   
+    //this.getUserStatistics = this.getUserStatistics.bind(this);   
   }
 
   componentDidMount(){
     this.getAllUsers();
-    this.getUserStatistics();
+    //this.getUserStatistics();
   }
 
   getAllUsers = () => {
@@ -35,9 +37,14 @@ class UsersList extends React.Component {
     .then((res) => {      
       console.log(res);
       this.setState({
-        users: res.data.users
+        users: res.data.users,
+        total_clicks: res.data.total_clicks,
+        total_page_views: res.data.total_page_views
+
       }, () => {
         console.log(this.state.users);
+        //console.log(this.state.total_clicks);
+        //console.log(this.state.total_page_views);
       })
     })
     .catch((err) => {
@@ -45,28 +52,28 @@ class UsersList extends React.Component {
     })
   }
 
-  getUserStatistics = () => {
-    let userId = 999;
+  // getUserStatistics = () => {
+  //   let userId = 999;
 
-    axios.post('http://localhost:4000/user/' + userId, {}, {
-      headers: {
-        'Content-Type': 'application/json',
-      },  
-      data: {
-        "beginDate": "2019-01-01",
-        "endDate": "2019-10-11"
-      }
-    })
-    .then((res) => {      
-      console.log(res);
-      this.setState({
-       // users: res.data.users
-      })
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+  //   axios.post('http://localhost:4000/user/' + userId, {}, {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },  
+  //     data: {
+  //       "beginDate": "2019-01-01",
+  //       "endDate": "2019-10-11"
+  //     }
+  //   })
+  //   .then((res) => {      
+  //     console.log(res);
+  //     this.setState({
+  //      // users: res.data.users
+  //     })
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   })
+  // }
 
  
   render(){
@@ -96,7 +103,9 @@ class UsersList extends React.Component {
 	        		    <td>{ user.last_name }</td> 
 	        		    <td>{ user.email }</td>
 	        		    <td>{ user.gender }</td>
-	        		    <td>{ user.ip_address }</td>	        		       
+	        		    <td>{ user.ip_address }</td>
+                  <td>{ this.state.total_clicks[user.id] }</td>
+                  <td>{ this.state.total_page_views[user.id] }</td>
 	        		</tr>	        		      	  
 	        	)        	
             })}
