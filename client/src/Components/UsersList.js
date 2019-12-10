@@ -10,9 +10,10 @@ class UsersList extends React.Component {
     this.state={
       users: [],
       pageNumber: 1,
-      numberOfUsers: 10,
+      numberOfUsers: 20,
       total_clicks: [],
-      total_page_views: []
+      total_page_views: [],
+      totalUsers: 0
 
     };
     this.getAllUsers = this.getAllUsers.bind(this);
@@ -39,7 +40,8 @@ class UsersList extends React.Component {
       this.setState({
         users: res.data.users,
         total_clicks: res.data.total_clicks,
-        total_page_views: res.data.total_page_views
+        total_page_views: res.data.total_page_views,
+        totalUsers: res.data.totalUsers
 
       }, () => {
         console.log(this.state.users);
@@ -74,6 +76,29 @@ class UsersList extends React.Component {
   //     console.log(err);
   //   })
   // }
+
+  //Pagination
+  prevPage() {
+    if (this.state.pageNumber > 1) {
+        this.setState({
+          pageNumber: this.state.pageNumber - 1
+        }, () => {
+          this.getAllUsers();
+          //console.log(this.state.pageNumber);
+    });      
+    }         
+  }
+
+  nextPage() {
+    if ((this.state.totalUsers/this.state.pageNumber) > this.state.numberOfUsers) {
+      this.setState({
+        pageNumber: this.state.pageNumber + 1
+      }, () => {
+        this.getAllUsers();
+        console.log(this.state.pageNumber);        
+    });
+    }        
+  }
 
  
   render(){
@@ -110,7 +135,10 @@ class UsersList extends React.Component {
 	        	)        	
             })}
           </tbody>
-        </table>        
+        </table> 
+        <button onClick={this.prevPage.bind(this)}>Prev</button>
+        <button disabled >{ this.state.pageNumber }</button> 
+        <button onClick={this.nextPage.bind(this)}>Next</button>        
       </div> 
        
     </div>

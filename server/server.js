@@ -53,7 +53,8 @@ app.post('/users', (req, res) => {
 			"pageCount": pageCount,
 			"users": users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers),
 			"total_clicks": total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.clicks); return c}, {}),
-			"total_page_views": total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.page_views); return c}, {})
+			"total_page_views": total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.page_views); return c}, {}),
+			"totalUsers": users.length
 		});
 	} catch(err){
 		console.log(err);
