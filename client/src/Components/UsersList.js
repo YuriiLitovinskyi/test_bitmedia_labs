@@ -25,7 +25,12 @@ class UsersList extends React.Component {
     //this.getUserStatistics();
   }
 
-  getAllUsers = () => {
+  onChangeNumberOfUsers = (event) => {
+    this.setState({numberOfUsers: event.target.value});
+  }
+
+  getAllUsers = (e) => {
+    if(e) e.preventDefault();
     axios.post('http://localhost:4000/users', {}, {
       headers: {
         'Content-Type': 'application/json',
@@ -139,8 +144,18 @@ class UsersList extends React.Component {
         <button onClick={this.prevPage.bind(this)}>Prev</button>
         <button disabled >{ this.state.pageNumber }</button> 
         <button onClick={this.nextPage.bind(this)}>Next</button>        
-      </div> 
-       
+      </div>
+      <form onSubmit={ this.getAllUsers }>
+      <label>Display Users per page: </label>
+      <input  
+            type="number"
+            min={10}
+            max={50}           
+            value={ this.state.numberOfUsers } 
+            onChange={ this.onChangeNumberOfUsers.bind(this) }
+      />
+      <button type="submit">Apply</button>
+      </form>       
     </div>
    );
 

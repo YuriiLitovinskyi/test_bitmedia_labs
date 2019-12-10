@@ -75,6 +75,18 @@ app.post('/user/:id', (req, res) => {
 	console.log(new Date(endDate).getTime());	
 	console.log(users.filter((user) => user.id === userId).length > 0);
 
+
+    //Getting min and max date from user statistics
+	let maxDateUser = users_statistic.reduce((a, b) => {
+	  return new Date(a.date) > new Date(b.date) ? a : b;
+	});
+	let minDateUser = users_statistic.reduce((a, b) => {
+	  return new Date(a.date) < new Date(b.date) ? a : b;
+	});
+	console.log(maxDateUser);
+	console.log(minDateUser);
+    ///
+
 	begin = new Date(beginDate).getTime();
 	end = new Date(endDate).getTime();
 
@@ -83,7 +95,7 @@ app.post('/user/:id', (req, res) => {
 		try {
 			res.json({
 				"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));})				                                        
-		        });
+		        });			
 		} catch(err){
 			console.log(err);
 		}		
