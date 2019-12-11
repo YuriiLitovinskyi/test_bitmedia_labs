@@ -94,7 +94,9 @@ app.post('/user/:id', (req, res) => {
 	if (users.filter( user => user.id === userId).length > 0){
 		try {
 			res.json({
-				"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));})				                                        
+				"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));}),
+				"firstName": users.find(x => x.id === userId).first_name,
+				"lastName": users.find(x => x.id === userId).last_name				                                        
 		        });			
 		} catch(err){
 			console.log(err);

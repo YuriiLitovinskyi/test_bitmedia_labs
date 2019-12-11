@@ -1,5 +1,7 @@
 import React from 'react';
-import Group_13 from '../styles/Group_13.png';
+import Group_13 from '../styles/Images/Group_13.png';
+import Group_15 from '../styles/Images/Group_15.png';
+import Group_14 from '../styles/Images/Group_14.png';
 import { Link } from 'react-router-dom'; 
 
 
@@ -24,14 +26,21 @@ class Main extends React.Component {
 	        <h3 className="CleanD">Clean Design</h3>
 	        <p className="Sales">Increase sales by showing true dynamics of your website.</p>
 	      </div>
-	      <h1>Main!</h1>     
+		  <div className="Rectangle35">
+	        <img className="Group_15" src={Group_15} alt="Secure Data img"></img>
+	        <h3 className="SecureD">Secure Data</h3>
+	        <p className="OnlineStore">Increase sales by showing true dynamics of your website.</p>
+	      </div>
+		  <div className="Rectangle36">
+	        <img className="Group_14" src={Group_14} alt="Retina ready img"></img>
+	        <h3 className="RetinaR">Retina Ready</h3>
+	        <p className="SocialProof">Realize importance of social proof in customer’s purchase decision.</p>
+	      </div>       
 	    </div>
   );
 
 	}  
 }
-
-
   
 
 export default Main;

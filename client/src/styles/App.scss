@@ -178,14 +178,152 @@ color: #7E7E7E;
 
 }
 
-.Group_13 {
+.Group_13, .Group_15, .Group_14 {
   /* Vector */
 
 display: flex;
 margin: auto;
 
+}
+
+.Rectangle35 {
+  /* Rectangle 35 */
 
 
+position: absolute;
+padding-top: 80px;
+width: 380px;
+height: 323px;
+left: 530px;
+top: 869px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+border-radius: 32px;
+
+}
+
+.SecureD {
+  /* Secure Data */
+
+
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+width: 151px;
+height: 29px;
+left: 645px;
+top: 1053px;
+
+
+
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+text-align: center;
+
+color: #1A1A1A;
+
+}
+
+.OnlineStore {
+  /* Build your online store’s trust using Social Proof & Urgency. */
+
+
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+width: 316px;
+height: 46px;
+left: 562px;
+top: 1098px;
+
+
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 142%;
+/* or 23px */
+
+text-align: center;
+
+color: #7E7E7E;
+}
+
+.Rectangle36 {
+  /* Rectangle 36 */
+
+
+position: absolute;
+padding-top: 80px;
+width: 380px;
+height: 323px;
+left: 930px;
+top: 869px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+border-radius: 32px;
+}
+
+.RetinaR {
+  /* Retina Ready */
+
+
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+width: 165px;
+height: 29px;
+left: 1038px;
+top: 1053px;
+
+
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+text-align: center;
+
+color: #1A1A1A;
+
+}
+
+.SocialProof {
+  /* Realize importance of social proof in customer’s purchase decision. */
+
+
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+width: 316px;
+height: 46px;
+left: 962px;
+top: 1098px;
+
+
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 142%;
+/* or 23px */
+
+text-align: center;
+
+color: #7E7E7E;
+}
+
+.Nav {
+  display: flex;
+  align-items: left;  
+  line-height: 20px;
+  color: #3A80BA;
+  list-style: none;
+  justify-content: 5px; 
+}
+
+ul a {
+  text-decoration: none;
 }
 
   

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReactApexChart from 'react-apexcharts';
+import { Link } from 'react-router-dom';
 
 
 class UserInfo extends React.Component {
@@ -10,7 +11,9 @@ class UserInfo extends React.Component {
         this.state = {
             id : this.props.match.params.id,
             user: [],
-            beginDate: "2019-10-01",
+            firstName: "",
+            lastName: "",
+            beginDate: "2019-10-02",
             endDate: "2019-10-08",
             optionsClicks: {
                 stroke: {
@@ -22,8 +25,7 @@ class UserInfo extends React.Component {
                 opacity: 0.9,
                 colors: ["#039BE5"],
                 strokeColor: "#fff",
-                strokeWidth: 2,
-                 
+                strokeWidth: 2,                 
                 hover: {
                   size: 8,
                 }
@@ -56,8 +58,7 @@ class UserInfo extends React.Component {
                 opacity: 0.9,
                 colors: ["#039BE5"],
                 strokeColor: "#fff",
-                strokeWidth: 2,
-                 
+                strokeWidth: 2,                 
                 hover: {
                   size: 8,
                 }
@@ -93,16 +94,9 @@ class UserInfo extends React.Component {
 
   onChangeEndDate = (event) => {
     this.setState({endDate: event.target.value});
-  }
+  }  
 
-
-
-  //console.log(data);
-  //console.log(data.match.params.id);
-
-  getUserStatistics = (userId) => {
-    //let userId = 999;
-
+  getUserStatistics = (userId) => { 
     axios.post('http://localhost:4000/user/' + userId, {}, {
       headers: {
         'Content-Type': 'application/json',
@@ -116,6 +110,8 @@ class UserInfo extends React.Component {
       console.log(res);
       this.setState({
         user: res.data.user,
+        firstName: res.data.firstName,
+        lastName: res.data.lastName,
         seriesClicks: [{        	
         	data: res.data.user.map(user => user.clicks),                              
         }],
@@ -145,9 +141,20 @@ class UserInfo extends React.Component {
   } 
 
 render(){
-	 return (
+	 return (	 	
     <div className="UserInfo">
-      <h1>User Info!</h1>
+      <ul className="Nav">
+        <Link to='/'>
+            <li>Main page ></li>
+        </Link>
+        <Link to='/users'>
+            <li>> User statistics ></li>
+        </Link>
+        <Link to='#'>
+            <li>> {this.state.firstName} {this.state.lastName}</li>
+        </Link>         
+	  </ul>  
+      <h2>{ this.state.firstName } { this.state.lastName }</h2>
       <ReactApexChart options={this.state.optionsClicks} series={this.state.seriesClicks} type="line" height="350" />  
       <ReactApexChart options={this.state.optionsViews} series={this.state.seriesViews} type="line" height="350" />
       <input  
@@ -167,8 +174,6 @@ render(){
 }
  
 }
-
-
   
 
 export default UserInfo;

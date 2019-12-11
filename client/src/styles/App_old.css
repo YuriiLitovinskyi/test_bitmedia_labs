@@ -166,3 +166,14 @@ color: #3A80BA;
   border-radius: 32px;
 
 }
+
+
+
+.Nav {
+  display: flex;
+  align-items: left;  
+  line-height: 20px;
+  color: #3A80BA;
+  list-style: none;
+  justify-content: 5px;
+}
