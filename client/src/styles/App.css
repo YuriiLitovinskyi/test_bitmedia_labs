@@ -1,4 +1,65 @@
-@charset "UTF-8";
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.row::after {
+  display: table;
+  clear: both;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
 .App {
   position: relative;
   margin: auto;
@@ -7,325 +68,31 @@
   background: #FFFFFF;
 }
 
-.App-header {
-  position: absolute;
-  width: 1440px;
-  height: 655px;
-  left: 0px;
-  top: 0px;
+.App .header-main .header {
+  padding-left: 130px;
+  padding-top: 24px;
   background: linear-gradient(92.09deg, #255D8B 2.29%, #3A80BA 96.79%);
-}
-
-.App-header .AppCo {
-  position: absolute;
-  width: 136px;
-  height: 49px;
-  left: 130px;
-  top: 24px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 49px;
-  /* identical to box height */
   color: #FFFFFF;
+  height: 655px;
 }
 
-.App-header .Brainstorming {
-  /* Brainstorming for desired perfect Usability */
-  position: absolute;
-  width: 586px;
-  height: 118px;
-  left: 130px;
-  top: 121px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 48px;
-  line-height: 59px;
-  color: #FFFFFF;
-}
-
-.App-header .About {
-  /* Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work! */
-  position: absolute;
-  width: 580px;
-  height: 56px;
-  left: 130px;
-  top: 263px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 142%;
-  /* or 28px */
-  color: #FFFFFF;
-}
-
-.App-header .statsButton {
-  /* Rectangle 56 */
-  position: absolute;
+.App .header-main .header button {
   width: 154px;
   height: 56px;
-  left: 130px;
-  top: 351px;
-  background: #FFFFFF;
   border-radius: 8px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 142%;
-  /* identical to box height, or 23px */
-  text-align: center;
+  background: #FFFFFF;
   color: #3A80BA;
-}
-
-.App-header .Why {
-  /* Why small business owners love AppCo? */
-  position: absolute;
-  width: 580px;
-  height: 78px;
-  left: 430px;
-  top: 671px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 39px;
-  text-align: center;
-  color: #1A1A1A;
-}
-
-.App-header .LearnMore {
-  /* Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work! */
-  position: absolute;
-  width: 780px;
-  height: 56px;
-  left: 330px;
-  top: 773px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 142%;
-  /* or 28px */
-  text-align: center;
-  color: #7E7E7E;
-}
-
-.Rectangle34 {
-  position: absolute;
-  padding-top: 80px;
-  width: 380px;
-  height: 323px;
-  left: 130px;
-  top: 869px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  border-radius: 32px;
-}
-
-.CleanD {
-  /* Clean Design */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  padding-top: 20px;
-  width: 164px;
-  height: 29px;
-  left: 248px;
-  top: 1053px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-  color: #1A1A1A;
-}
-
-.Sales {
-  /* Increase sales by showing true dynamics of your website. */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  padding-top: 20px;
-  width: 316px;
-  height: 46px;
-  left: 162px;
-  top: 1098px;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
-  line-height: 142%;
-  /* or 23px */
-  text-align: center;
-  color: #7E7E7E;
 }
 
-.Group_13, .Group_15, .Group_14 {
-  /* Vector */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-}
-
-.Rectangle35 {
-  /* Rectangle 35 */
+.App .header-main .header .mobile-wrap {
   position: absolute;
-  padding-top: 80px;
-  width: 380px;
-  height: 323px;
-  left: 530px;
-  top: 869px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  border-radius: 32px;
-}
-
-.SecureD {
-  /* Secure Data */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  padding-top: 20px;
-  width: 151px;
-  height: 29px;
-  left: 645px;
-  top: 1053px;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-  color: #1A1A1A;
-}
-
-.OnlineStore {
-  /* Build your online store’s trust using Social Proof & Urgency. */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  padding-top: 20px;
-  width: 316px;
-  height: 46px;
-  left: 562px;
-  top: 1098px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 142%;
-  /* or 23px */
-  text-align: center;
-  color: #7E7E7E;
-}
-
-.Rectangle36 {
-  /* Rectangle 36 */
-  position: absolute;
-  padding-top: 80px;
-  width: 380px;
-  height: 323px;
-  left: 930px;
-  top: 869px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  border-radius: 32px;
-}
-
-.RetinaR {
-  /* Retina Ready */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  padding-top: 20px;
-  width: 165px;
-  height: 29px;
-  left: 1038px;
-  top: 1053px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-  color: #1A1A1A;
-}
-
-.SocialProof {
-  /* Realize importance of social proof in customer’s purchase decision. */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  padding-top: 20px;
-  width: 316px;
-  height: 46px;
-  left: 962px;
-  top: 1098px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 142%;
-  /* or 23px */
-  text-align: center;
-  color: #7E7E7E;
-}
-
-.Nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  line-height: 20px;
-  color: #3A80BA;
-  list-style: none;
-  -webkit-box-pack: 5px;
-      -ms-flex-pack: 5px;
-          justify-content: 5px;
-}
-
-ul a {
-  text-decoration: none;
-}
-
-.Rectangle39 {
-  /* Rectangle 39 */
-  position: absolute;
-  width: 1440px;
-  height: 429px;
-  left: 0px;
-  top: 1273px;
-  background: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);
-}
-
-.Reacatgle37 {
-  /* Rectangle 37 */
-  position: absolute;
-  width: 1440px;
-  height: 395px;
-  left: 0px;
-  top: 1307px;
-  background: linear-gradient(93.47deg, #255D8B 2.29%, #3A80BA 96.79%);
-}
-
-.AppBusiness {
-  /* Start Managing your apps business, more faster */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  width: 580px;
-  height: 78px;
-  left: 130px;
-  top: 1379px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 39px;
-  color: #FFFFFF !important;
+  left: 65.04%;
+  right: 16.43%;
+  top: 2.65%;
+  bottom: 78.34%;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.03)), color-stop(95.21%, rgba(255, 255, 255, 0.03)), to(rgba(0, 0, 0, 0.03)));
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 95.21%, rgba(0, 0, 0, 0.03) 100%);
+  border: 1px solid #F0F0F0;
 }
 /*# sourceMappingURL=App.css.map */
