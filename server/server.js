@@ -8,38 +8,40 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 //Getting data from files
 const users = JSON.parse(fs.readFileSync('data/users.json', 'utf8'));
 const users_statistic = JSON.parse(fs.readFileSync('data/users_statistic.json', 'utf8'));
-
 //console.log(users);
 //console.log(users_statistic);
+
+let totalNumberOfUsers = users.length;
+
 
 //GET data from users.json
 app.post('/users', (req, res) => {
 	let pageNumber = parseInt(req.body.pageNumber || 1);
-	let numberOfUsers = parseInt(req.body.numberOfUsers);	
+	let numberOfUsers = parseInt(req.body.numberOfUsers);
+	//console.log(req.body);	
+
+	//Counts number of all pages according to number of users per page
 	const pageCount = Math.ceil(users.length / numberOfUsers);
 	if (pageNumber > pageCount){
 		pageNumber = pageCount;
-	}
-	console.log(pageNumber);
-	console.log(numberOfUsers);
-	console.log(req.body);
-	console.log(pageCount);
-	console.log(users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers) );
+	}	
+	
+	//Users per page
 	let usersArray = users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers);
-	
+	//Gets all users with the same id from users_statistic array according to users per page
 	let total_clicks_views_Array = users_statistic.filter(user1 => usersArray.some(user2 => user1.user_id === user2.id));
-	
+	//Total clicks for users per page
 	let total_clicks = total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.clicks); return c}, {});
-	console.log("----");
-	console.log(total_clicks_views_Array);
-	console.log("----");
-	console.log(total_clicks);
-	console.log("----end----");
-	console.log(users.length);	
-	console.log(Object.keys(users).length);
+	//Total views for users per page
+	let totalViews = total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.page_views); return c}, {});
+	
+	//console.log(total_clicks);
+	//console.log(totalViews);		
+	
 	if (pageNumber < 0 || pageNumber === 0){
 		response = {
 			"error": true,
@@ -48,55 +50,54 @@ app.post('/users', (req, res) => {
 		return res.json(response); 
 	} 
 	try {
-		res.json({
-			"page": pageNumber,
-			"pageCount": pageCount,
-			"users": users.slice(pageNumber * numberOfUsers - numberOfUsers, pageNumber * numberOfUsers),
-			"total_clicks": total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.clicks); return c}, {}),
-			"total_page_views": total_clicks_views_Array.reduce((c, i)=>{c[i.user_id]=(c[i.user_id]||0)+parseFloat(i.page_views); return c}, {}),
-			"totalUsers": users.length
+		res.json({			
+			//"pageCount": pageCount,
+			"users": usersArray,
+			"total_clicks": total_clicks,
+			"total_page_views": totalViews,
+			"totalUsers": totalNumberOfUsers
 		});
 	} catch(err){
 		console.log(err);
 	}
 });
 
+
 //GET data from users_statistic.json
 app.post('/user/:id', (req, res) => {
-	let userId = parseInt(req.params.id);
-	//let userId = parseInt(req.body.userId);
-	//let userId = 38;
+	let userId = parseInt(req.params.id);	
 	let beginDate = req.body.beginDate;
 	let endDate = req.body.endDate;
-	console.log(userId);
-	console.log(beginDate);
-	console.log(endDate);   
-	console.log(new Date(beginDate).getTime()); 
-	console.log(new Date(endDate).getTime());	
-	console.log(users.filter((user) => user.id === userId).length > 0);
+	//console.log(userId);		
 
+	//Check if user with such id is present on the server (users array)
+	let userIsPresent = users.filter( user => user.id === userId).length > 0;
 
-    //Getting min and max date from user statistics
+    //Getting object of user with min and max date from users_statistic
 	let maxDateUser = users_statistic.reduce((a, b) => {
 	  return new Date(a.date) > new Date(b.date) ? a : b;
 	});
 	let minDateUser = users_statistic.reduce((a, b) => {
 	  return new Date(a.date) < new Date(b.date) ? a : b;
 	});
-	console.log(maxDateUser);
-	console.log(minDateUser);
-    ///
+	//console.log(maxDateUser);
+	//console.log(minDateUser);  
 
-	begin = new Date(beginDate).getTime();
-	end = new Date(endDate).getTime();
+    //Get array of user statistics for required dates
+	let begin = new Date(beginDate).getTime();
+	let end = new Date(endDate).getTime();
+	let userStatisticDateArray = users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));});
 
+	//Get first and last name of the user according to his id
+	let firstName = users.find(x => x.id === userId).first_name;
+	let lastName = users.find(x => x.id === userId).last_name;
 
-	if (users.filter( user => user.id === userId).length > 0){
+	if (userIsPresent === true){
 		try {
 			res.json({
-				"user":	users_statistic.filter(x => {let time = new Date(x.date).getTime(); return (x.user_id === userId && (begin < time && time < end));}),
-				"firstName": users.find(x => x.id === userId).first_name,
-				"lastName": users.find(x => x.id === userId).last_name				                                        
+				"user":	userStatisticDateArray,
+				"firstName": firstName,
+				"lastName": lastName				                                        
 		        });			
 		} catch(err){
 			console.log(err);
@@ -109,6 +110,7 @@ app.post('/user/:id', (req, res) => {
 		return res.json(response); 			
 	} 	
 });
+
 
 
 const port = 4000;

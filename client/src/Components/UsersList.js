@@ -14,19 +14,19 @@ class UsersList extends React.Component {
       total_clicks: [],
       total_page_views: [],
       totalUsers: 0
-
     };
     this.getAllUsers = this.getAllUsers.bind(this);       
   }
 
   componentDidMount(){
-    this.getAllUsers();   ;
+    this.getAllUsers();   
   } 
 
   onChangeNumberOfUsers = (event) => {
     this.setState({numberOfUsers: event.target.value});
   }
 
+  //GET users from server
   getAllUsers = (e) => {
     if(e) e.preventDefault();
     axios.post('http://localhost:4000/users', {}, {
@@ -39,17 +39,14 @@ class UsersList extends React.Component {
       }
     })
     .then((res) => {      
-      console.log(res);
+      //console.log(res);
       this.setState({
         users: res.data.users,
         total_clicks: res.data.total_clicks,
         total_page_views: res.data.total_page_views,
         totalUsers: res.data.totalUsers
-
       }, () => {
-        console.log(this.state.users);
-        //console.log(this.state.total_clicks);
-        //console.log(this.state.total_page_views);
+        //console.log(this.state);        
       })
     })
     .catch((err) => {
@@ -75,7 +72,7 @@ class UsersList extends React.Component {
         pageNumber: this.state.pageNumber + 1
       }, () => {
         this.getAllUsers();
-        console.log(this.state.pageNumber);        
+        //console.log(this.state.pageNumber);        
     });
     }        
   }

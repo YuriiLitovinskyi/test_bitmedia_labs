@@ -96,6 +96,7 @@ class UserInfo extends React.Component {
     this.setState({endDate: event.target.value});
   }  
 
+  //Get User statistic data from server according to begin/end date 
   getUserStatistics = (userId) => { 
     axios.post('http://localhost:4000/user/' + userId, {}, {
       headers: {
@@ -107,7 +108,7 @@ class UserInfo extends React.Component {
       }
     })
     .then((res) => {      
-      console.log(res);
+      //console.log(res);
       this.setState({
         user: res.data.user,
         firstName: res.data.firstName,
@@ -128,11 +129,8 @@ class UserInfo extends React.Component {
               categories: res.data.user.map(user => user.date)
           }
         }        
-      }, () => {
-      	console.log(this.state.seriesClicks);
-      	//console.log(res.data.user.clicks);
-      	console.log(this.state.user);
-      	//console.log(this.state.optionsClicks.xaxis);
+      }, () => {    	
+      	//console.log(this.state);      	
       })
     })
     .catch((err) => {

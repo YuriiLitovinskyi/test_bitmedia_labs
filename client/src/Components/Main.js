@@ -35,7 +35,12 @@ class Main extends React.Component {
 	        <img className="Group_14" src={Group_14} alt="Retina ready img"></img>
 	        <h3 className="RetinaR">Retina Ready</h3>
 	        <p className="SocialProof">Realize importance of social proof in customer’s purchase decision.</p>
-	      </div>       
+	      </div>
+		  <div className="Rectangle37">   
+			<div className="Rectangle39">
+				<h2 className="AppBusiness">Start Managing your apps business, more faster</h2>
+			</div> 
+		  </div>   
 	    </div>
   );
 

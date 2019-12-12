@@ -291,4 +291,41 @@
 ul a {
   text-decoration: none;
 }
+
+.Rectangle39 {
+  /* Rectangle 39 */
+  position: absolute;
+  width: 1440px;
+  height: 429px;
+  left: 0px;
+  top: 1273px;
+  background: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);
+}
+
+.Reacatgle37 {
+  /* Rectangle 37 */
+  position: absolute;
+  width: 1440px;
+  height: 395px;
+  left: 0px;
+  top: 1307px;
+  background: linear-gradient(93.47deg, #255D8B 2.29%, #3A80BA 96.79%);
+}
+
+.AppBusiness {
+  /* Start Managing your apps business, more faster */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  width: 580px;
+  height: 78px;
+  left: 130px;
+  top: 1379px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  color: #FFFFFF !important;
+}
 /*# sourceMappingURL=App.css.map */
