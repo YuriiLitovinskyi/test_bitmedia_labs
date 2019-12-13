@@ -60,7 +60,7 @@
   width: 100%;
 }
 
-.App {
+.App, .UsersList {
   position: relative;
   margin: auto;
   width: 1440px;
@@ -68,15 +68,14 @@
   background: #FFFFFF;
 }
 
-.App .header-main .header {
+.App .header-main .header, .UsersList .header-main .header {
   padding-left: 130px;
-  padding-top: 24px;
   background: linear-gradient(92.09deg, #255D8B 2.29%, #3A80BA 96.79%);
   color: #FFFFFF;
   height: 655px;
 }
 
-.App .header-main .header button {
+.App .header-main .header button, .UsersList .header-main .header button {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -85,18 +84,17 @@
   font-size: 16px;
 }
 
-.App .header-main .header .mobile-wrap {
+.App .header-main .header .mobile-wrap, .UsersList .header-main .header .mobile-wrap {
   position: absolute;
   left: 65.04%;
   right: 16.43%;
   top: 2.65%;
   bottom: 78.34%;
-  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.03)), color-stop(95.21%, rgba(255, 255, 255, 0.03)), to(rgba(0, 0, 0, 0.03)));
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 95.21%, rgba(0, 0, 0, 0.03) 100%);
+  background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 95.21%, rgba(0, 0, 0, 0.03) 100%);
   border: 1px solid #F0F0F0;
 }
 
-.App .question {
+.App .question, .UsersList .question {
   display: block;
   margin: auto;
   font-size: 32px;
@@ -106,7 +104,7 @@
   height: 78px;
 }
 
-.App .about {
+.App .about, .UsersList .about {
   display: block;
   margin: auto;
   text-align: center;
@@ -118,17 +116,327 @@
   padding-top: 60px;
 }
 
-.App .Info {
+.App .Info, .UsersList .Info {
   padding: 40px;
   margin: 30px;
 }
 
-.App .clean-design {
+.App .Info .rowInfo, .UsersList .Info .rowInfo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .Info .colInfo, .UsersList .Info .colInfo {
+  padding: 0 10px;
+}
+
+.App .Info .clean-design, .UsersList .Info .clean-design {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 32px;
-  padding: 50px;
+  padding: 40px;
   text-align: center;
+}
+
+.App .Info .clean-design h3, .UsersList .Info .clean-design h3 {
+  color: #1A1A1A;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.App .Info .clean-design h2, .UsersList .Info .clean-design h2 {
+  font-weight: bold;
+  font-size: 48px;
+  margin: 0 0 30px 0;
+}
+
+.App .Info .clean-design p, .UsersList .Info .clean-design p {
+  color: #7E7E7E;
+  margin: 0px;
+}
+
+.App .learn-container, .UsersList .learn-container {
+  background: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);
+  color: #FFFFFF;
+  text-align: left;
+  padding-top: 106px;
+  padding-bottom: 80px;
+}
+
+.App .learn-container .learn-col h2, .UsersList .learn-container .learn-col h2 {
+  font-size: 32px;
+  line-height: 39px;
+}
+
+.App .learn-container .learn-col button, .UsersList .learn-container .learn-col button {
+  width: 154px;
+  height: 56px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #3A80BA;
+  font-size: 16px;
+  width: 221px;
+  height: 56px;
+}
+
+.App .learn-container .Jimmy-wrap, .UsersList .learn-container .Jimmy-wrap {
+  background: linear-gradient(135.04deg, #FFFFFF 1.29%, #D0D0D0 80.1%);
+  border-radius: 22px;
+  position: absolute;
+  left: 48.94%;
+  right: 14.63%;
+  top: 44.46%;
+  bottom: 43.1%;
+}
+
+.App .learn-container .Jimmy-wrap img, .UsersList .learn-container .Jimmy-wrap img {
+  display: block;
+  margin: auto;
+  padding-top: 26px;
+}
+
+.App .learn-container .keyboard_base, .UsersList .learn-container .keyboard_base {
+  position: absolute;
+  left: 45.5%;
+  right: 11.24%;
+  top: 57.08%;
+  bottom: 41.38%;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.0983639);
+          box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.0983639);
+}
+
+.App .learn-container .Rectangle_4, .UsersList .learn-container .Rectangle_4 {
+  position: relative;
+  left: 95px;
+  top: 220px;
+  bottom: 42.78%;
+  width: 524px;
+  height: 24px;
+  background: #DADADA;
+}
+
+.App .standard, .UsersList .standard {
+  color: #3A80BA;
+}
+
+.App .purchase-btn, .UsersList .purchase-btn {
+  width: 154px;
+  height: 56px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #3A80BA;
+  font-size: 16px;
+  background: #3A80BA;
+  color: #FFFFFF;
+  width: 221px;
+  height: 56px;
+  margin-top: 24px;
+}
+
+.App .contact-us, .UsersList .contact-us {
+  display: block;
+  margin: auto;
+  text-align: center;
+  line-height: 28px;
+  font-size: 20px;
+  width: 780px;
+  height: 56px;
+  color: #7E7E7E;
+}
+
+.App .contact-us span, .UsersList .contact-us span {
+  color: #3A80BA;
+  font-weight: bold;
+}
+
+.App .main-footer, .UsersList .main-footer {
+  background: linear-gradient(95.82deg, #255D8B 1.6%, #3A80BA 96.44%);
+  position: absolute;
+  width: 100%;
+  height: 183.46px;
+  left: 0px;
+  top: 2890.46px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.App .main-footer input, .UsersList .main-footer input {
+  width: 579px;
+  height: 64px;
+  background: #FFFFFF;
+  border: 1px solid #F1F1F1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #7E7E7E;
+  padding-left: 20px;
+}
+
+.App .main-footer button, .UsersList .main-footer button {
+  width: 154px;
+  height: 56px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #3A80BA;
+  font-size: 16px;
+  background: #3A80BA;
+  width: 176px;
+  color: #FFFFFF;
+  margin-left: -180px;
+}
+
+.App .main-footer h3, .UsersList .main-footer h3 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  margin: 30px;
+}
+
+.App .main-footer p, .UsersList .main-footer p {
+  font-style: normal;
+  font-weight: normal;
+  margin: 30px;
+  padding-top: 11px;
+}
+
+.UsersList .header-statistics {
+  width: 1440px;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  background: #3A80BA;
+}
+
+.UsersList .header-statistics h2 {
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  margin-left: 40px;
+  margin-top: 0px;
+}
+
+.UsersList .Nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  line-height: 20px;
+  color: #3A80BA;
+  list-style: none;
+  -webkit-box-pack: 5px;
+      -ms-flex-pack: 5px;
+          justify-content: 5px;
+}
+
+.UsersList ul a {
+  text-decoration: none;
+}
+
+.UsersList h2 {
+  margin-left: 40px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  /* identical to box height */
+  color: #1A1A1A;
+}
+
+.UsersList .form-users {
+  text-align: center;
+}
+
+.UsersList .form-users label, .UsersList .form-users input {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  color: #3A80BA;
+}
+
+.UsersList .form-users input, .UsersList .form-users textarea {
+  background-color: #d1d1d1;
+}
+
+.UsersList .form-users button {
+  width: 154px;
+  height: 56px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #3A80BA;
+  font-size: 16px;
+  background: #3A80BA;
+  width: 100px;
+  height: 30px;
+  color: #FFFFFF;
+}
+
+.UsersList table {
+  width: 100%;
+  padding: 0px 40px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.UsersList table thead {
+  background: #3A80BA;
+  color: #FFFFFF;
+}
+
+.UsersList table th, .UsersList table td {
+  padding: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.UsersList table td {
+  color: #1A1A1A;
+  padding: 6px;
+}
+
+.UsersList table tr:nth-child(even) {
+  background-color: #F1F1F1;
+}
+
+.UsersList .pagin-buttons {
+  text-align: center;
+}
+
+.UsersList .pagin-buttons .pagin-btn {
+  width: 154px;
+  height: 56px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #3A80BA;
+  font-size: 16px;
+  background: #3A80BA;
+  width: 48px;
+  height: 48px;
+  color: #FFFFFF;
+  margin: 0px 4px 0px 4px;
+}
+
+.UsersList .pagin-buttons .pagin-num-btn {
+  width: 154px;
+  height: 56px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #3A80BA;
+  font-size: 16px;
+  background: #3A80BA;
+  width: 48px;
+  height: 48px;
+  color: #FFFFFF;
+  margin: 0px 4px 0px 4px;
 }
 /*# sourceMappingURL=App.css.map */

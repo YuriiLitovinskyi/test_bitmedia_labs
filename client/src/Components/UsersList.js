@@ -80,27 +80,34 @@ class UsersList extends React.Component {
  
   render(){
   	  return (
-    <div className="UsersList">  
-    <ul className="Nav">
-        <Link to='/'>
-            <li>Main page ></li>
-        </Link>
-        <Link to='#'>
-            <li>> User statistics</li>
-        </Link>         
-    </ul>    
-      <h1>Users statistics</h1>
-      <form onSubmit={ this.getAllUsers }>
-	      <label>Display Users per page: </label>
-	      <input  
-	            type="number"
-	            min={10}
-	            max={50}           
-	            value={ this.state.numberOfUsers } 
-	            onChange={ this.onChangeNumberOfUsers.bind(this) }
-	      />
-	      <button type="submit">Apply</button>
-      </form> 
+    <div className="UsersList">
+      <div className="header-statistics">
+        <h2>AppCo</h2>
+      </div>
+      <ul className="Nav">
+          <Link to='/'>
+              <li>Main page ></li>
+          </Link>
+          <Link to='#'>
+              <li>> User statistics</li>
+          </Link>         
+      </ul>    
+      <h2>Users statistics</h2>
+      <div className="row">
+        <div className="col-12 form-users">
+          <form onSubmit={ this.getAllUsers }>
+            <label>Display Users per page: </label>
+            <input  
+                  type="number"
+                  min={10}
+                  max={50}           
+                  value={ this.state.numberOfUsers } 
+                  onChange={ this.onChangeNumberOfUsers.bind(this) }
+            />
+            <button type="submit">Apply</button>
+          </form> 
+        </div>
+      </div>      
       <div>
         <table>
           <thead>
@@ -132,9 +139,13 @@ class UsersList extends React.Component {
             })}
           </tbody>
         </table> 
-        <button onClick={this.prevPage.bind(this)}>Prev</button>
-        <button disabled >{ this.state.pageNumber }</button> 
-        <button onClick={this.nextPage.bind(this)}>Next</button>        
+        <div className="row">
+          <div className="col-12 pagin-buttons">
+            <button className="pagin-btn" onClick={this.prevPage.bind(this)}>Prev</button>
+            <button className="pagin-num-btn" disabled >{ this.state.pageNumber }</button> 
+            <button className="pagin-btn" onClick={this.nextPage.bind(this)}>Next</button>          
+          </div>
+        </div>                 
       </div>             
     </div>
    );

@@ -140,7 +140,7 @@ class UserInfo extends React.Component {
 
 render(){
 	 return (	 	
-    <div className="UserInfo">
+    <div className="UserInfo">      
       <ul className="Nav">
         <Link to='/'>
             <li>Main page ></li>
