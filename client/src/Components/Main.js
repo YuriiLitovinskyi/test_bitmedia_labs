@@ -9,7 +9,7 @@ import keyboard_base from '../styles/Images/keyboard_base.png';
 import Rectangle_4 from '../styles/Images/Rectangle_4.png';
 import undraw_online from '../styles/Images/undraw_online.png';
 import undraw_file from '../styles/Images/undraw_file.png';
-import undraw_quiz from '../styles/Images/undraw_quiz.png';
+import undraw_quiz from '../styles/Images/undraw_quiz.png'; 
 
 
 
@@ -22,7 +22,7 @@ class Main extends React.Component {
 			<header className="header-main">
 				<div className="header">
 					<div className="row">
-						<div className="col-6">
+						<div className="col-6 header-col">
 							<h2>AppCo</h2>
 							<h1><b>Brainstorming</b> for desired perfect Usability</h1>
 							<p>Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work!</p>
@@ -67,26 +67,27 @@ class Main extends React.Component {
 							<p>Realize importance of social proof in customer’s purchase decision.</p>
 						</div>										
 					</div>									
-				</div>
+				</div>	
 			</div>
 			<div className="row learn-container">
-				<div className="col-4 learn-col">
+				<div className="col-6 learn-col">
 					<h2>Start Managing your apps business, more faster</h2>	
 					<p>Objectively deliver professional value with diverse web-readiness. Collaboratively transition wireless customer service without goal-oriented catalysts for change. Collaboratively.</p>
 					<button>Learn more</button>				
 				</div>
-				<div className="col-8">
+				<div className="col-6">
 					<div className="Jimmy-wrap">
 						<img className="Jimmy_Huh" src={ Jimmy_Huh } alt="Jimmy Huh"></img>
 					</div>	
 					<img className="keyboard_base" src={ keyboard_base } alt="keyboard base"></img>	
 					<img className="Rectangle_4" src={ Rectangle_4 } alt="Rectangle_4"></img>				
 				</div>
-			</div>  
+			</div>
+			<div className="wrap-img">
 			<div className="question">				
-				<h3><b>Afforadble Pricing and Packages</b> choose your best one</h3>				
+				<h3 className="h3Question"><b>Afforadble Pricing and Packages</b> choose your best one</h3>				
 			</div>	
-			<div className="about">
+			<div className="about2">
 				<p>Monotonectally grow strategic process improvements vis-a-vis integrated resources.</p>
 			</div>			
 			<div className="Info">
@@ -137,7 +138,10 @@ class Main extends React.Component {
 			</div>
 			<div className="contact-us">
 				<p>If you need custom services or Need more? <span>Contact us</span></p>
-			</div> 			
+			</div> 	
+			
+			</div>  
+					
 			<footer className="main-footer">
 				<div className="row">
 					<div className="col-12">

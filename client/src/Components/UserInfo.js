@@ -32,12 +32,19 @@ class UserInfo extends React.Component {
               },        
               title: {
                   text: 'Clicks',
-                  align: 'left'
+                  align: 'left',
+                  style: {
+                    fontWeight: 'bold',
+                    fontSize:  '24px',
+                    color:  '#1A1A1A',
+                    fontStyle: 'normal',
+                    fontFamily: 'Montserrat'                                                         
+                  },
               },
               grid: {
                   row: {
                       colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-                      opacity: 0.2
+                      opacity: 0.5
                   },
               },
               xaxis: {
@@ -65,16 +72,24 @@ class UserInfo extends React.Component {
               },         
               title: {
                   text: 'Views',
-                  align: 'left'
+                  align: 'left',
+                  style: {
+                    fontWeight: 'bold',
+                    fontSize:  '24px',
+                    color:  '#1A1A1A',
+                    fontStyle: 'normal',
+                    fontFamily: 'Montserrat'
+                                                         
+                  },
               },
               grid: {
                   row: {
                       colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-                      opacity: 0.2
+                      opacity: 0.5
                   },
               },
               xaxis: {
-                  categories: [],
+                  categories: []                  
               }
             },
             seriesViews: [{
@@ -140,7 +155,10 @@ class UserInfo extends React.Component {
 
 render(){
 	 return (	 	
-    <div className="UserInfo">      
+    <div className="UserInfo"> 
+      <div className="header-statistics">
+        <h2>AppCo</h2>
+      </div>     
       <ul className="Nav">
         <Link to='/'>
             <li>Main page ></li>
@@ -151,21 +169,36 @@ render(){
         <Link to='#'>
             <li>> {this.state.firstName} {this.state.lastName}</li>
         </Link>         
-	  </ul>  
+	    </ul>  
       <h2>{ this.state.firstName } { this.state.lastName }</h2>
-      <ReactApexChart options={this.state.optionsClicks} series={this.state.seriesClicks} type="line" height="350" />  
-      <ReactApexChart options={this.state.optionsViews} series={this.state.seriesViews} type="line" height="350" />
-      <input  
-            type="date"           
-            value={ this.state.beginDate } 
-            onChange={ this.onChangeBeginDate.bind(this) }
-      />
-      <input  
-            type="date"           
-            value={ this.state.endDate } 
-            onChange={ this.onChangeEndDate.bind(this) }
-      /> 
-      <button onClick={ () => {this.getUserStatistics(this.state.id)} }>Apply</button>     
+      <ReactApexChart className="chart" options={this.state.optionsClicks} series={this.state.seriesClicks} type="line" height="350" width="1180"  />  
+      <ReactApexChart className="chart" options={this.state.optionsViews} series={this.state.seriesViews} type="line" height="350" width="1180" />
+      <div className="col-12 form-users">          
+        <input  
+          type="date"           
+          value={ this.state.beginDate } 
+          onChange={ this.onChangeBeginDate.bind(this) }
+        />
+        <input  
+          type="date"           
+          value={ this.state.endDate } 
+          onChange={ this.onChangeEndDate.bind(this) }
+        />  
+          <button onClick={ () => {this.getUserStatistics(this.state.id)} }>Apply</button>       
+      </div>  
+      <div className="footer-statistics">
+        <div className="row">
+          <div className="col-4">
+            <h4>AppCo</h4>
+          </div>
+          <div className="col-4">
+            <p>All rights reserved by ThemeTags</p>						
+          </div>
+          <div className="col-4">
+            <p>Copyrights © 2019. </p>						
+          </div>
+        </div>
+      </div>    
     </div>
   );
 

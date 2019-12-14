@@ -60,22 +60,53 @@
   width: 100%;
 }
 
-.App, .UsersList {
+@font-face {
+  font-family: 'Montserrat';
+  src: url(fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff);
+}
+
+.App {
   position: relative;
   margin: auto;
   width: 1440px;
-  height: 2890px;
   background: #FFFFFF;
+  font-family: Montserrat;
 }
 
-.App .header-main .header, .UsersList .header-main .header {
+.App .header-main .header {
   padding-left: 130px;
   background: linear-gradient(92.09deg, #255D8B 2.29%, #3A80BA 96.79%);
+  background-image: url("Images/Rectangle_8.png");
   color: #FFFFFF;
   height: 655px;
 }
 
-.App .header-main .header button, .UsersList .header-main .header button {
+.App .header-main .header .header-col {
+  width: 45%;
+}
+
+.App .header-main .header h2 {
+  font-weight: normal;
+  font-size: 40px;
+  margin-top: 24px;
+}
+
+.App .header-main .header h1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  margin-bottom: 0px;
+}
+
+.App .header-main .header p {
+  margin-top: 24px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
+.App .header-main .header button {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -84,44 +115,69 @@
   font-size: 16px;
 }
 
-.App .header-main .header .mobile-wrap, .UsersList .header-main .header .mobile-wrap {
+.App .header-main .header .mobile-wrap {
   position: absolute;
   left: 65.04%;
   right: 16.43%;
   top: 2.65%;
   bottom: 78.34%;
-  background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 95.21%, rgba(0, 0, 0, 0.03) 100%);
-  border: 1px solid #F0F0F0;
 }
 
-.App .question, .UsersList .question {
+.App .wrap-img {
+  background-image: url("Images/Rectangle_51.png");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.App .wrap-img .about2 {
+  display: block;
+  margin: auto;
+  width: 664px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  color: #7E7E7E;
+}
+
+.App .question {
   display: block;
   margin: auto;
   font-size: 32px;
   text-align: center;
-  padding-top: 16px;
   width: 580px;
-  height: 78px;
 }
 
-.App .about, .UsersList .about {
+.App .question h3 {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-weight: normal;
+}
+
+.App .about {
   display: block;
   margin: auto;
   text-align: center;
   line-height: 28px;
   font-size: 20px;
-  width: 780px;
-  height: 56px;
+  width: 760px;
   color: #7E7E7E;
-  padding-top: 60px;
 }
 
-.App .Info, .UsersList .Info {
+.App .about p {
+  margin: 0px;
+}
+
+.App .Info {
   padding: 40px;
+  padding-top: 10px;
+  padding-bottom: 0px;
   margin: 30px;
+  margin-top: 22px;
+  margin-bottom: 81px;
 }
 
-.App .Info .rowInfo, .UsersList .Info .rowInfo {
+.App .Info .rowInfo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -130,50 +186,64 @@
           justify-content: center;
 }
 
-.App .Info .colInfo, .UsersList .Info .colInfo {
+.App .Info .colInfo {
   padding: 0 10px;
 }
 
-.App .Info .clean-design, .UsersList .Info .clean-design {
+.App .Info .clean-design {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 32px;
   padding: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
   text-align: center;
 }
 
-.App .Info .clean-design h3, .UsersList .Info .clean-design h3 {
+.App .Info .clean-design h3 {
   color: #1A1A1A;
   font-weight: 600;
   font-size: 24px;
 }
 
-.App .Info .clean-design h2, .UsersList .Info .clean-design h2 {
+.App .Info .clean-design h2 {
   font-weight: bold;
   font-size: 48px;
   margin: 0 0 30px 0;
 }
 
-.App .Info .clean-design p, .UsersList .Info .clean-design p {
+.App .Info .clean-design p {
   color: #7E7E7E;
   margin: 0px;
+  font-size: 15px;
 }
 
-.App .learn-container, .UsersList .learn-container {
+.App .learn-container {
   background: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);
   color: #FFFFFF;
   text-align: left;
-  padding-top: 106px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 75px;
 }
 
-.App .learn-container .learn-col h2, .UsersList .learn-container .learn-col h2 {
+.App .learn-container .learn-col {
+  width: 48%;
+}
+
+.App .learn-container .learn-col h2 {
   font-size: 32px;
   line-height: 39px;
+  margin-left: 130px;
+  margin-bottom: 0px;
 }
 
-.App .learn-container .learn-col button, .UsersList .learn-container .learn-col button {
+.App .learn-container .learn-col p {
+  margin-left: 130px;
+  margin-bottom: 24px;
+}
+
+.App .learn-container .learn-col button {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -182,49 +252,59 @@
   font-size: 16px;
   width: 221px;
   height: 56px;
+  margin-left: 130px;
 }
 
-.App .learn-container .Jimmy-wrap, .UsersList .learn-container .Jimmy-wrap {
+.App .learn-container .Jimmy-wrap {
   background: linear-gradient(135.04deg, #FFFFFF 1.29%, #D0D0D0 80.1%);
   border-radius: 22px;
   position: absolute;
   left: 48.94%;
   right: 14.63%;
-  top: 44.46%;
-  bottom: 43.1%;
+  top: 1230px;
+  bottom: 1055px;
 }
 
-.App .learn-container .Jimmy-wrap img, .UsersList .learn-container .Jimmy-wrap img {
+.App .learn-container .Jimmy-wrap img {
   display: block;
   margin: auto;
   padding-top: 26px;
+  z-index: 2;
 }
 
-.App .learn-container .keyboard_base, .UsersList .learn-container .keyboard_base {
+.App .learn-container .keyboard_base {
   position: absolute;
   left: 45.5%;
   right: 11.24%;
-  top: 57.08%;
+  top: 1580px;
   bottom: 41.38%;
   -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.0983639);
           box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.0983639);
+  z-index: 2;
 }
 
-.App .learn-container .Rectangle_4, .UsersList .learn-container .Rectangle_4 {
+.App .learn-container .Rectangle_4 {
   position: relative;
-  left: 95px;
-  top: 220px;
+  left: 10px;
+  top: 270px;
   bottom: 42.78%;
   width: 524px;
   height: 24px;
   background: #DADADA;
 }
 
-.App .standard, .UsersList .standard {
+.App .question .h3Question {
+  margin-top: 80px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+}
+
+.App .standard {
   color: #3A80BA;
 }
 
-.App .purchase-btn, .UsersList .purchase-btn {
+.App .purchase-btn {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -238,7 +318,7 @@
   margin-top: 24px;
 }
 
-.App .contact-us, .UsersList .contact-us {
+.App .contact-us {
   display: block;
   margin: auto;
   text-align: center;
@@ -247,25 +327,31 @@
   width: 780px;
   height: 56px;
   color: #7E7E7E;
+  padding-top: 0px;
+  padding-bottom: 28px;
 }
 
-.App .contact-us span, .UsersList .contact-us span {
+.App .contact-us p {
+  margin: 0px;
+}
+
+.App .contact-us span {
   color: #3A80BA;
   font-weight: bold;
 }
 
-.App .main-footer, .UsersList .main-footer {
+.App .main-footer {
   background: linear-gradient(95.82deg, #255D8B 1.6%, #3A80BA 96.44%);
+  background-image: url("Images/Rectangle_54.png");
   position: absolute;
   width: 100%;
   height: 183.46px;
   left: 0px;
-  top: 2890.46px;
   color: #FFFFFF;
   text-align: center;
 }
 
-.App .main-footer input, .UsersList .main-footer input {
+.App .main-footer input {
   width: 579px;
   height: 64px;
   background: #FFFFFF;
@@ -276,9 +362,10 @@
   font-size: 16px;
   color: #7E7E7E;
   padding-left: 20px;
+  margin-top: 25px;
 }
 
-.App .main-footer button, .UsersList .main-footer button {
+.App .main-footer button {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -291,21 +378,33 @@
   margin-left: -180px;
 }
 
-.App .main-footer h3, .UsersList .main-footer h3 {
+.App .main-footer h3 {
   font-size: 32px;
   font-style: normal;
   font-weight: normal;
   margin: 30px;
 }
 
-.App .main-footer p, .UsersList .main-footer p {
+.App .main-footer p {
   font-style: normal;
   font-weight: normal;
   margin: 30px;
   padding-top: 11px;
 }
 
-.UsersList .header-statistics {
+.UsersList, .UserInfo {
+  font-family: Montserrat;
+  position: relative;
+  margin: auto;
+  width: 1440px;
+  background: #FFFFFF;
+}
+
+.UsersList .chart, .UserInfo .chart {
+  margin-left: 120px;
+}
+
+.UsersList .header-statistics, .UserInfo .header-statistics {
   width: 1440px;
   height: 72px;
   left: 0px;
@@ -313,16 +412,17 @@
   background: #3A80BA;
 }
 
-.UsersList .header-statistics h2 {
+.UsersList .header-statistics h2, .UserInfo .header-statistics h2 {
   color: #FFFFFF;
   font-style: normal;
   font-weight: normal;
   font-size: 40px;
-  margin-left: 40px;
+  margin-left: 130px;
   margin-top: 0px;
+  padding-top: 10px;
 }
 
-.UsersList .Nav {
+.UsersList .Nav, .UserInfo .Nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,38 +435,40 @@
   -webkit-box-pack: 5px;
       -ms-flex-pack: 5px;
           justify-content: 5px;
+  margin-left: 90px;
 }
 
-.UsersList ul a {
+.UsersList ul a, .UserInfo ul a {
   text-decoration: none;
 }
 
-.UsersList h2 {
+.UsersList h2, .UserInfo h2 {
   margin-left: 40px;
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
   line-height: 39px;
+  margin-left: 130px;
   /* identical to box height */
   color: #1A1A1A;
 }
 
-.UsersList .form-users {
+.UsersList .form-users, .UserInfo .form-users {
   text-align: center;
 }
 
-.UsersList .form-users label, .UsersList .form-users input {
+.UsersList .form-users label, .UsersList .form-users input, .UserInfo .form-users label, .UserInfo .form-users input {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   color: #3A80BA;
 }
 
-.UsersList .form-users input, .UsersList .form-users textarea {
+.UsersList .form-users input, .UsersList .form-users textarea, .UserInfo .form-users input, .UserInfo .form-users textarea {
   background-color: #d1d1d1;
 }
 
-.UsersList .form-users button {
+.UsersList .form-users button, .UserInfo .form-users button {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -379,40 +481,45 @@
   color: #FFFFFF;
 }
 
-.UsersList table {
-  width: 100%;
+.UsersList table, .UserInfo table {
+  width: 87%;
   padding: 0px 40px;
   text-align: left;
   margin-top: 10px;
   margin-bottom: 24px;
+  margin-left: 90px;
 }
 
-.UsersList table thead {
+.UsersList table thead, .UserInfo table thead {
   background: #3A80BA;
   color: #FFFFFF;
 }
 
-.UsersList table th, .UsersList table td {
+.UsersList table th, .UsersList table td, .UserInfo table th, .UserInfo table td {
   padding: 14px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
 }
 
-.UsersList table td {
+.UsersList table td, .UserInfo table td {
   color: #1A1A1A;
   padding: 6px;
 }
 
-.UsersList table tr:nth-child(even) {
+.UsersList table tr:nth-child(even), .UserInfo table tr:nth-child(even) {
   background-color: #F1F1F1;
 }
 
-.UsersList .pagin-buttons {
+.UsersList table tbody tr:hover, .UserInfo table tbody tr:hover {
+  background-color: #ffff99;
+}
+
+.UsersList .pagin-buttons, .UserInfo .pagin-buttons {
   text-align: center;
 }
 
-.UsersList .pagin-buttons .pagin-btn {
+.UsersList .pagin-buttons .pagin-btn, .UserInfo .pagin-buttons .pagin-btn {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -426,7 +533,7 @@
   margin: 0px 4px 0px 4px;
 }
 
-.UsersList .pagin-buttons .pagin-num-btn {
+.UsersList .pagin-buttons .pagin-num-btn, .UserInfo .pagin-buttons .pagin-num-btn {
   width: 154px;
   height: 56px;
   border-radius: 8px;
@@ -438,5 +545,20 @@
   height: 48px;
   color: #FFFFFF;
   margin: 0px 4px 0px 4px;
+}
+
+.UsersList .footer-statistics, .UserInfo .footer-statistics {
+  background: #1C3B55;
+  height: 57px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.UsersList .footer-statistics h4, .UserInfo .footer-statistics h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 11px;
 }
 /*# sourceMappingURL=App.css.map */

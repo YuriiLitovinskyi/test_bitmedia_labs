@@ -5,22 +5,54 @@
 $Color: #FFFFFF; 
 $TextButtonColor: #3A80BA;;
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url(fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff)
+}
 
 
-.App, .UsersList {
+
+.App {
     position: relative;
     margin: auto;
     width: 1440px;
-    height: 2890px;
-    background: $Color;       
+    //height: 2890px;
+    background: $Color;  
+    font-family: Montserrat;     
 
     .header-main {
       .header {
         padding-left: 130px;
         //padding-top: 24px;       
         background: linear-gradient(92.09deg, #255D8B 2.29%, #3A80BA 96.79%);
+        background-image: url("Images/Rectangle_8.png");
         color: $Color;
         height: 655px;
+
+        .header-col {
+          width: 45%;
+        }
+
+        h2 {
+          font-weight: normal;
+          font-size: 40px;
+          margin-top: 24px;
+        }
+
+        h1 {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 48px;
+          margin-bottom: 0px;
+        }
+
+        p {
+          margin-top: 24px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          margin-bottom: 32px;
+        }
 
         button {          
           @include button;
@@ -33,21 +65,44 @@ $TextButtonColor: #3A80BA;;
           top: 2.65%;
           bottom: 78.34%;
 
-          background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 95.21%, rgba(0, 0, 0, 0.03) 100%);
-          border: 1px solid #F0F0F0;
+         // background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 95.21%, rgba(0, 0, 0, 0.03) 100%);
+          //border: 1px solid #F0F0F0;
         }
       }
 
   }
 
+  .wrap-img {
+    background-image: url("Images/Rectangle_51.png");
+    background-position: right;
+    background-repeat: no-repeat;
+
+    .about2 {
+      display: block;
+      margin: auto;
+      width: 664px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      text-align: center;
+      color: #7E7E7E;
+    }
+  }
+
   .question {
     display:block;
-    margin: auto;   
+    margin: auto;     
     font-size: 32px; 
     text-align: center;
-    padding-top: 16px;
+    //padding-top: 16px;
     width: 580px;
-    height: 78px
+    //height: 78px;  
+    
+    h3 {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      font-weight: normal;
+    }
   }
 
   .about {
@@ -56,16 +111,26 @@ $TextButtonColor: #3A80BA;;
     text-align: center;
     line-height: 28px;
     font-size: 20px;
-    width: 780px;
-    height: 56px; 
+    width: 760px;
+    //height: 56px; 
     color: #7E7E7E;
-    padding-top: 60px;  
+    //padding-top: 60px; 
+    
+    p {
+      margin: 0px;
+    }
   }
 
   .Info {
     padding: 40px;
+    padding-top: 10px;
+    padding-bottom: 0px;
     //padding-bottom: 0px;
     margin: 30px;
+    margin-top: 22px;
+    margin-bottom: 81px;   
+
+
     .rowInfo {
       align-items: center;
       justify-content: center;
@@ -80,6 +145,9 @@ $TextButtonColor: #3A80BA;;
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
       border-radius: 32px;
       padding: 40px;
+      padding-left: 32px;
+      padding-right: 32px;
+     // padding-bottom: 48px;
       text-align: center; 
       
       h3 {
@@ -98,29 +166,45 @@ $TextButtonColor: #3A80BA;;
         color: #7E7E7E;
         //padding: 0px;
         margin: 0px;
+        font-size: 15px;
+        
+        
       }
-    }     
+    }    
+  
+ 
   }
 
   .learn-container {
     background: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);  
     color: $Color;
     text-align: left;    
-    //padding-left: 130px;
-    padding-top: 106px;
-    padding-bottom: 80px;     
+    //padding-left: 130px;     
+    padding-top: 40px;
+    padding-bottom: 75px; 
+        
      
-      .learn-col {        
-
+      .learn-col {  
+        width: 48%;
+              
+    
         h2 {
           font-size: 32px;
-          line-height: 39px;         
+          line-height: 39px;
+          margin-left: 130px;  
+          margin-bottom: 0px;                         
+        }
+
+        p {
+          margin-left: 130px; 
+          margin-bottom: 24px;         
         }
 
         button {          
           @include button;
           width: 221px;
-          height: 56px;        
+          height: 56px;  
+          margin-left: 130px;        
         }
         
       }
@@ -131,13 +215,14 @@ $TextButtonColor: #3A80BA;;
         position: absolute;
         left: 48.94%;
         right: 14.63%;
-        top: 44.46%;
-        bottom: 43.1%;
+        top: 1230px;
+        bottom: 1055px;       
 
         img {
           display: block;
           margin: auto;
           padding-top: 26px;
+          z-index: 2;
           
         }
       }
@@ -145,18 +230,19 @@ $TextButtonColor: #3A80BA;;
         position: absolute;
         left: 45.5%;
         right: 11.24%;
-        top: 57.08%;
+        top: 1580px;
         bottom: 41.38%;
-
         //background: #F5F5F5;
         box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.0983639);
+        z-index: 2;
       }
 
       .Rectangle_4 {
         position: relative;
-        left: 95px;
-        //right: 14.64%;
-        top: 220px;
+        left: 10px;
+        //right: 30px;
+        //top: 56.4%;
+        top: 270px;
         bottom: 42.78%;
         width: 524px;
         height: 24px;
@@ -164,6 +250,18 @@ $TextButtonColor: #3A80BA;;
         background: #DADADA;
       }  
   }
+
+  .question {
+    .h3Question {
+      margin-top: 80px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 32px;
+    }    
+    
+  }
+  
+
   .standard {
     color: #3A80BA;
   }
@@ -187,7 +285,12 @@ $TextButtonColor: #3A80BA;;
     width: 780px;
     height: 56px; 
     color: #7E7E7E;
-    //padding-top: 60px;
+    padding-top: 0px;
+    padding-bottom: 28px;
+
+    p {
+      margin: 0px;
+    }
     
     span {
       color: $TextButtonColor;
@@ -197,12 +300,13 @@ $TextButtonColor: #3A80BA;;
 
   .main-footer {
     background: linear-gradient(95.82deg, #255D8B 1.6%, #3A80BA 96.44%);
+    background-image: url("Images/Rectangle_54.png"); 
     //transform: matrix(1, 0, 0, -1, 0, 0);
     position: absolute;
     width: 100%;
     height: 183.46px;
     left: 0px;
-    top: 2890.46px;
+    //top: 2890.46px;
     color: $Color;       
     text-align: center;  
 
@@ -216,6 +320,7 @@ $TextButtonColor: #3A80BA;;
       font-size: 16px;
       color: #7E7E7E;;
       padding-left: 20px;
+      margin-top: 25px;
     }
     
     button {
@@ -245,8 +350,18 @@ $TextButtonColor: #3A80BA;;
  
 }
 
-.UsersList {
-  
+.UsersList, .UserInfo {
+    font-family: Montserrat;   
+    position: relative;
+    margin: auto;
+    width: 1440px;
+    //height: 2890px;
+    background: $Color;  
+    
+    .chart {
+      margin-left: 120px;
+    }
+   
   
 .header-statistics {
   // position: absolute;
@@ -261,8 +376,9 @@ $TextButtonColor: #3A80BA;;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
-    margin-left: 40px; 
+    margin-left: 130px; 
     margin-top: 0px;
+    padding-top: 10px;
   }
  }
 
@@ -273,6 +389,7 @@ $TextButtonColor: #3A80BA;;
   color: #3A80BA;
   list-style: none;
   justify-content: 5px; 
+  margin-left: 90px;
 }
 
   ul a {
@@ -285,6 +402,7 @@ h2 {
   font-weight: bold;
   font-size: 32px;
   line-height: 39px;
+  margin-left: 130px;
   /* identical to box height */
 color: #1A1A1A;
 }
@@ -313,11 +431,13 @@ color: #1A1A1A;
 }
 
 table {
-  width: 100%;
+  width: 87%;
   padding: 0px 40px;
   text-align: left;
   margin-top: 10px;  
   margin-bottom: 24px;
+  margin-left: 90px;
+  //margin-right: 200px;
  
 
   thead {
@@ -340,6 +460,10 @@ table {
 
   tr:nth-child(even){
     background-color: #F1F1F1;
+  }
+
+  tbody tr:hover {
+    background-color: #ffff99;
   }
   
 
@@ -366,6 +490,28 @@ table {
     margin: 0px 4px 0px 4px;
   }
 
+}
+
+.footer-statistics {
+  background: #1C3B55;
+  height: 57px;
+  color: $Color;
+  text-align: center;
+  margin-top: 24px;
+
+  h4 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin: 11px;
+  }
+
+  p {
+    // font-style: normal;
+    // font-weight: normal;
+    // font-size: 16px;
+    // line-height: 142%;
+  }
 }
 
 

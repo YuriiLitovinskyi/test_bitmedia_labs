@@ -83,7 +83,7 @@ class UsersList extends React.Component {
     <div className="UsersList">
       <div className="header-statistics">
         <h2>AppCo</h2>
-      </div>
+      </div>      
       <ul className="Nav">
           <Link to='/'>
               <li>Main page ></li>
@@ -146,7 +146,20 @@ class UsersList extends React.Component {
             <button className="pagin-btn" onClick={this.nextPage.bind(this)}>Next</button>          
           </div>
         </div>                 
-      </div>             
+      </div> 
+      <div className="footer-statistics">
+        <div className="row">
+          <div className="col-4">
+            <h4>AppCo</h4>
+          </div>
+          <div className="col-4">
+            <p>All rights reserved by ThemeTags</p>						
+          </div>
+          <div className="col-4">
+            <p>Copyrights © 2019. </p>						
+          </div>
+        </div>
+      </div>            
     </div>
    );
 
