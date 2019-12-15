@@ -62,7 +62,7 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url(fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff);
+  src: url(layouts/fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff);
 }
 
 .App {
@@ -116,11 +116,9 @@
 }
 
 .App .header-main .header .mobile-wrap {
-  position: absolute;
-  left: 65.04%;
-  right: 16.43%;
-  top: 2.65%;
-  bottom: 78.34%;
+  display: block;
+  margin-top: 76px;
+  margin-left: 186px;
 }
 
 .App .wrap-img {
@@ -224,7 +222,7 @@
   color: #FFFFFF;
   text-align: left;
   padding-top: 40px;
-  padding-bottom: 75px;
+  padding-bottom: 35px;
 }
 
 .App .learn-container .learn-col {
@@ -262,32 +260,28 @@
   left: 48.94%;
   right: 14.63%;
   top: 1230px;
-  bottom: 1055px;
+  bottom: 1225px;
 }
 
 .App .learn-container .Jimmy-wrap img {
   display: block;
   margin: auto;
   padding-top: 26px;
-  z-index: 2;
 }
 
-.App .learn-container .keyboard_base {
-  position: absolute;
-  left: 45.5%;
-  right: 11.24%;
-  top: 1580px;
-  bottom: 41.38%;
+.App .learn-container .Jimmy-wrap .keyboard_base {
+  display: block;
+  margin-top: -15px;
+  margin-left: -50px;
   -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.0983639);
           box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.0983639);
-  z-index: 2;
 }
 
 .App .learn-container .Rectangle_4 {
-  position: relative;
-  left: 10px;
-  top: 270px;
-  bottom: 42.78%;
+  display: block;
+  z-index: 5;
+  margin-top: 280px;
+  margin-left: 15px;
   width: 524px;
   height: 24px;
   background: #DADADA;
@@ -343,7 +337,6 @@
 .App .main-footer {
   background: linear-gradient(95.82deg, #255D8B 1.6%, #3A80BA 96.44%);
   background-image: url("Images/Rectangle_54.png");
-  position: absolute;
   width: 100%;
   height: 183.46px;
   left: 0px;
@@ -400,6 +393,10 @@
   background: #FFFFFF;
 }
 
+.UsersList .charts-wrap, .UserInfo .charts-wrap {
+  margin-right: 120px;
+}
+
 .UsersList .chart, .UserInfo .chart {
   margin-left: 120px;
 }
@@ -449,7 +446,6 @@
   font-size: 32px;
   line-height: 39px;
   margin-left: 130px;
-  /* identical to box height */
   color: #1A1A1A;
 }
 
@@ -560,5 +556,89 @@
   font-weight: normal;
   font-size: 24px;
   margin: 11px;
+}
+
+/*Media*/
+@media screen and (max-width: 800px) {
+  .App, .UsersList, .UserInfo, .header-statistics {
+    width: 800px !important;
+    margin: 0px;
+  }
+  .col-6, .col-3, .header-col {
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .header-main {
+    width: 800px;
+  }
+  .mobile, .Jimmy-wrap, .keyboard_base {
+    display: none;
+  }
+  .Rectangle_4 {
+    display: none !important;
+  }
+  table {
+    display: block !important;
+    margin: 0px !important;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block !important;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #ccc;
+  }
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50% !important;
+  }
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  td:nth-of-type(1):before {
+    content: "Id";
+  }
+  td:nth-of-type(2):before {
+    content: "First Name";
+  }
+  td:nth-of-type(3):before {
+    content: "Last Name";
+  }
+  td:nth-of-type(4):before {
+    content: "Email";
+  }
+  td:nth-of-type(5):before {
+    content: "Gender";
+  }
+  td:nth-of-type(6):before {
+    content: "IP address";
+  }
+  td:nth-of-type(7):before {
+    content: "Total clicks";
+  }
+  td:nth-of-type(8):before {
+    content: "Total page views";
+  }
+  .charts-wrap {
+    margin: 0px !important;
+  }
+  .chart {
+    margin: auto !important;
+  }
 }
 /*# sourceMappingURL=App.css.map */

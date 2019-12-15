@@ -15,6 +15,9 @@ class UserInfo extends React.Component {
             lastName: "",
             beginDate: "2019-10-02",
             endDate: "2019-10-08",
+            chart: {
+              width: '100%'
+          },
             optionsClicks: {
                 stroke: {
                 width: 5,
@@ -171,8 +174,12 @@ render(){
         </Link>         
 	    </ul>  
       <h2>{ this.state.firstName } { this.state.lastName }</h2>
-      <ReactApexChart className="chart" options={this.state.optionsClicks} series={this.state.seriesClicks} type="line" height="350" width="1180"  />  
-      <ReactApexChart className="chart" options={this.state.optionsViews} series={this.state.seriesViews} type="line" height="350" width="1180" />
+      <div className="charts-wrap">
+        <ReactApexChart className="chart" options={this.state.optionsClicks} series={this.state.seriesClicks} type="line" height="350"   />  
+        <ReactApexChart className="chart" options={this.state.optionsViews} series={this.state.seriesViews} type="line" height="350"  />
+
+      </div>
+      
       <div className="col-12 form-users">          
         <input  
           type="date"           

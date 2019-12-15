@@ -78,8 +78,9 @@ class Main extends React.Component {
 				<div className="col-6">
 					<div className="Jimmy-wrap">
 						<img className="Jimmy_Huh" src={ Jimmy_Huh } alt="Jimmy Huh"></img>
+						<img className="keyboard_base" src={ keyboard_base } alt="keyboard base"></img>
 					</div>	
-					<img className="keyboard_base" src={ keyboard_base } alt="keyboard base"></img>	
+						
 					<img className="Rectangle_4" src={ Rectangle_4 } alt="Rectangle_4"></img>				
 				</div>
 			</div>
