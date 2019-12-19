@@ -56,6 +56,7 @@ app.post('/users', (req, res) => {
 	try {
 		res.json({			
 			//"pageCount": pageCount,
+			"success": true,
 			"users": usersArray,
 			"total_clicks": total_clicks,
 			"total_page_views": totalViews,

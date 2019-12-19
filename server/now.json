@@ -1,5 +1,15 @@
 {
 	"name": "node-lambda",
 	"version": 2,
-	"builds": [{ "src":  "server.js", "use": "@now/node-server" }]
+	"builds": [
+		{ 
+		    "src":  "index.js", 
+	        "use": "@now/node-server",
+	        "config": {
+	        	"includeFiles": [
+	        		"data/**"
+	        	]
+	        } 
+        }
+	]
 }
