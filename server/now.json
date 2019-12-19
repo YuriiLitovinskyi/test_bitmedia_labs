@@ -3,7 +3,7 @@
 	"version": 2,
 	"builds": [
 		{ 
-		    "src":  "index.js", 
+		    "src":  "/index.js", 
 	        "use": "@now/node-server",
 	        "config": {
 	        	"includeFiles": [
@@ -11,5 +11,10 @@
 	        	]
 	        } 
         }
+	],
+	"routes": [
+		{ "src": "/", "dest": "/index.js" },
+		{ "src": "/users", "methods": ["POST"],  "dest": "/index.js" },
+		{ "src": "/user/(?<id>[^/]*)", "methods": ["POST"],  "dest": "/index.js" }
 	]
 }
