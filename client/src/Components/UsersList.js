@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../index';
 
 
 class UsersList extends React.Component {
@@ -29,7 +30,7 @@ class UsersList extends React.Component {
   //GET users from server
   getAllUsers = (e) => {
     if(e) e.preventDefault();
-    axios.post('http://localhost:4000/users', {}, {
+    axios.post(`${BASE_URL}/users`, {}, {
       headers: {
         'Content-Type': 'application/json',
       },  

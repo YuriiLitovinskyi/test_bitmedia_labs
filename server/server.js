@@ -1,12 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-app.use(cors());
+
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//Production
+const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'prod-url';
+app.use(cors({ origin }));
 
 
 //Getting data from files

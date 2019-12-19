@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ReactApexChart from 'react-apexcharts';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../index';
 
 
 class UserInfo extends React.Component {
@@ -116,7 +117,7 @@ class UserInfo extends React.Component {
 
   //Get User statistic data from server according to begin/end date 
   getUserStatistics = (userId) => { 
-    axios.post('http://localhost:4000/user/' + userId, {}, {
+    axios.post(`${BASE_URL}/user/${userId}`, {}, {
       headers: {
         'Content-Type': 'application/json',
       },  
