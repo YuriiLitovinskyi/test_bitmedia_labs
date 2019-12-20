@@ -3,18 +3,20 @@
 	"version": 2,
 	"builds": [
 		{ 
-		    "src":  "/index.js", 
+		    "src":  "*.js", 
 	        "use": "@now/node-server",
 	        "config": {
 	        	"includeFiles": [
 	        		"data/**"
 	        	]
 	        } 
+        },
+        {
+        	"src": "/data/**", 
+        	"use": "@now/static"
         }
 	],
-	"routes": [
-		{ "src": "/", "dest": "/index.js" },
-		{ "src": "/users", "methods": ["POST"],  "dest": "/index.js" },
-		{ "src": "/user/(?<id>[^/]*)", "methods": ["POST"],  "dest": "/index.js" }
+	"routes": [		
+		{ "src": "/.*", "methods": ["POST"],  "dest": "/index.js" }	
 	]
 }
