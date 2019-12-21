@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-export const BASE_URL = process.env.NODE_ENV !== 'production' ? 'http://localhost:4000' : 'prod-backend-url';
+export const BASE_URL = process.env.NODE_ENV !== 'production' ? 'http://localhost:4000' : 'https://node-lambda.ylitovinskyi.now.sh';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

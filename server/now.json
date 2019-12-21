@@ -10,10 +10,14 @@
 	        		"data/**"
 	        	]
 	        } 
+        },
+        {
+            "src": "data/**",
+            "use": "@now/static"
         }       
 	],
 	"routes": [		
 		{ "src": "/users", "methods": ["POST"],  "dest": "/index.js" },
-		{ "src": "/user", "methods": ["POST"],  "dest": "/index.js" }		
+		{ "src": "/user/(?<id>[^/]*)", "methods": ["POST"],  "dest": "/index.js" }		
 	]
 }

@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Production
-const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'prod-url';
+const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'https://elated-easley-74ee41.netlify.com';
 app.use(cors({ origin }));
 
 
@@ -20,6 +20,10 @@ const users_statistic = JSON.parse(fs.readFileSync('data/users_statistic.json', 
 //console.log(users_statistic);
 
 let totalNumberOfUsers = users.length;
+
+app.get('/', (req, res) => {
+	res.json({success: true});
+});
 
 
 //GET data from users.json
@@ -100,6 +104,7 @@ app.post('/user/:id', (req, res) => {
 	if (userIsPresent === true){
 		try {
 			res.json({
+				"success": true,
 				"user":	userStatisticDateArray,
 				"firstName": firstName,
 				"lastName": lastName				                                        
