@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Production
-const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'https://elated-easley-74ee41.netlify.com';
+const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'https://react-client-bitmedia-labs.netlify.com';
 app.use(cors({ origin }));
 
 
